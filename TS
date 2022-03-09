@@ -6,3 +6,5 @@ local Speed = 250
  Tween:Play()		
    							
  -- Tween:Cancel() to cancel ongoing tween
+ -- Tween.Completed:Connect(function() check if tween complete if yes then do something else
+-- Tween.Completed:Wait()
