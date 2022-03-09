@@ -1,0 +1,8 @@
+local TS = game:GetService("TweenService")
+local Speed = 250
+ Time = (Vector3valuehere - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude / Speed
+ Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
+ Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3valuehere)})
+ Tween:Play()		
+   							
+ -- Tween:Cancel() to cancel ongoing tween
