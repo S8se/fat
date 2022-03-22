@@ -15,12 +15,12 @@
         Tween.Completed:Wait()
     end
     function toPureRedAndPrint()
-        a = "%x";
-        b = "%X";
-        Time = (Vector3.new(-5414.41357, 309.865753, -2212.45776) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude / Speed;
-        Info = TweenInfo.new(Time, Enum.EasingStyle.Linear);
+        a = "%x"
+        b = "%X"
+        Time = (Vector3.new(-5414.41357, 309.865753, -2212.45776) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude / Speed
+        Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3.new(-5414.41357, 309.865753, -2212.45776))})
-        Tween:Play();
+        Tween:Play()
         Tween.Completed:Connect(function()
             warn("Activate Color finished at", os.date(a), os.date(b));
         end);
@@ -30,8 +30,8 @@
         [2] = "Snow White"
     };
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(l1));
-    ToSnowwhite();
-    wait();
+    ToSnowwhite()
+    wait()
     local l2 = {
         [1] = "activateColor",
         [2] = "Winter Sky"
