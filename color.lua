@@ -17,7 +17,6 @@ spawn(function()
         wait(.1)
         end
     end)
-end
 spawn(function()
     while true do
     LocalPlayer = game.Players.LocalPlayer
