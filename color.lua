@@ -1,6 +1,23 @@
 local TS = game:GetService("TweenService")
 local Speed = 250
 nc = false
+buso = false
+spawn(function()
+        while true do
+               if buso then
+            pcall(function()
+                if game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                
+                else
+                    local args = {[1] = "Buso"}
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                end
+            end)
+                   end
+        wait(.1)
+        end
+    end)
+end
 spawn(function()
     while true do
     LocalPlayer = game.Players.LocalPlayer
@@ -18,7 +35,9 @@ spawn(function()
 end
 end)
 function ToColor(hello)
+    buso = true
     nc = true
+    buso 
     hallo = {
         'Snow White',
         'Winter Sky',
@@ -59,6 +78,7 @@ function ToColor(hello)
         Tween.Completed:Wait()
     end
     nc = false
+buso = false
 end
 ToColor("White")
 wait()
