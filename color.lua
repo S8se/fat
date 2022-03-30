@@ -36,8 +36,7 @@ end)
 function ToColor(hello)
     buso = true
     nc = true
-    buso 
-    hallo = {
+   hallo = {
         'Snow White',
         'Winter Sky',
         'Pure Red'
