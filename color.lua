@@ -22,6 +22,7 @@ spawn(function()
     LocalPlayer = game.Players.LocalPlayer
     Char = LocalPlayer.Character
     if nc then
+       game.Workspace.Gravity = 0
         for _, v in pairs(Char:GetDescendants()) do
             pcall(function()
                 if v:IsA("BasePart") then
