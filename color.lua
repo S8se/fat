@@ -1,6 +1,5 @@
 local TS = game:GetService("TweenService")
 local Speed = 250
-local Gravity = game.Workspace.Gravity
 nc = false
 buso = false
 spawn(function()
@@ -85,4 +84,4 @@ wait()
 ToColor("Pink")
 wait(.1)
 ToColor("Red")
-game.Workspace.Gravity = Gravity
+game.Workspace.Gravity = 196.2
