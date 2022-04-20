@@ -52,7 +52,6 @@ function ToColor(hello)
         Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3.new(-4971.47559, 331.565765, -3720.02954))})
         Tween:Play()
-        Tween.Completed:Wait()
     elseif hello == "Pink" then
         local l1 = {
             [1] = "activateColor",
@@ -63,7 +62,6 @@ function ToColor(hello)
         Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3.new(-5420.17, 1084.97, -2666.82))})
         Tween:Play()
-        Tween.Completed:Wait()
     elseif hello == "Red" then
         local l1 = {
             [1] = "activateColor",
@@ -74,13 +72,12 @@ function ToColor(hello)
         Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
         Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3.new(-5414.41357, 309.865753, -2212.45776))})
         Tween:Play()
-        Tween.Completed:Wait()
     end
     nc = false
 buso = false
 end
 ToColor("White")
-wait()
+wait(.1)
 ToColor("Pink")
 wait(.1)
 ToColor("Red")
