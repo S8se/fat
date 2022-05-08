@@ -1,0 +1,74 @@
+repeat wait() until game:IsLoaded()
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+repeat game:GetService('RunService').Stepped:Wait()
+if game.Players.LocalPlayer.PlayerGui:WaitForChild('Main').ChooseTeam.Visible == true then 
+game.Players.LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Size = UDim2.new(0,10000,0,10000)
+game.Players.LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Position = UDim2.new(-4,0,-5,0)
+game.Players.LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.BackgroundTransparency = 1
+wait(.5)
+game:GetService("VirtualUser"):Button1Down(Vector2.new(99,99))
+game:GetService("VirtualUser"):Button1Up(Vector2.new(99,99))
+end
+until game.Players.LocalPlayer.Team ~= nil and game:IsLoaded()
+wait(2)
+local TS = game:GetService("TweenService")
+local Speed = 250
+local OldGrav = game.Workspace.Gravity
+local Noclip = false
+local gameID = game.PlaceId
+local LocalPlayer = game.Players.LocalPlayer
+spawn(function()
+    while Noclip do
+        player = game.Players.LocalPlayer
+        character = player.Character
+        if Noclip then
+            for _, v in pairs(character:GetDescendants()) do
+                pcall(function()
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false
+                    end
+                end)
+            end
+        end
+        game:GetService("RunService").Stepped:wait()
+    end
+end)
+if game.PlaceId == 4442272183 then
+    function Tweens(Vector30,Vector31,Vector32,func, bool, Anch)
+        Time = (Vector3.new(Vector30,Vector31,Vector32) - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude / Speed
+        Info = TweenInfo.new(Time, Enum.EasingStyle.Linear)
+        Tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,Info,{CFrame = CFrame.new(Vector3.new(Vector30,Vector31,Vector32))})
+        Tween:Play()
+        Tween.Completed:Connect(function()
+            game.Workspace.Gravity = func
+            Noclip = bool
+        end)
+    end
+    Noclip = true
+    game.Workspace.Gravity = 0
+    Tweens(-2010.3568115234375, 72.9919204711914, -2952.074462890625, OldGrav, false, false)
+    spawn(function()
+    while true do
+pcall(function()
+        if game.Players.LocalPlayer.Character.Humanoid.Health == 11595 then
+            local args = {[1] = "Ken",[2] = true}
+            game:GetService("ReplicatedStorage").Remotes.CommE:FireServer(unpack(args))
+            for i, v in next, game:GetService("Workspace").Enemies:GetChildren() do
+                if v.Name == "Marine Captain [Lv. 900]" and v:FindFirstChild("HumanoidRootPart") then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(1,1,1)
+                end
+            end
+        elseif game.Players.LocalPlayer.Character.Humanoid.Health < 11594 then
+            game:GetService("TeleportService"):Teleport(gameID, LocalPlayer)
+	elseif not game.Players.LocalPlayer:FindFirstChild('Character') then
+		game.Players.LocalPlayer:WaitForChild('Character')        
+end
+end)
+        game:GetService('RunService').Stepped:Wait()
+    end
+    end)
+else
+    game.Players.LocalPlayer:Kick("get real")
+end
